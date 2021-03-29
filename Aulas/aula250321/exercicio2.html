@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 2 dos filme DC</title>
+    <style>
+        .papai, .pai, .filho{
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .papai .pai .filho{
+            flex-direction: row;
+            justify-content: space-between;
+                
+        }
+        .filinho{
+            display: flex;
+            flex-flow: column;
+        }
+        .papai .pai .filho .filinho button{
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="papai">
+        <div class="pai">
+            <div class="filho">
+                <div class="filinho">
+                    <select name="" id="lista_filmes_dc">
+                        <option value="1">Liga da Justiça</option>
+                        <option value="2">Super shock</option>
+                        <option value="3">Batman</option>
+                    
+                    </select>
+                </div>
+                
+                <div class="filinho">
+                    <select name="" id="lista_filmes_marvel">
+                        <option value="1">thor</option>
+                        <option value="2">Dr.Estranho</option>
+                        <option value="3">Hulk</option>
+                    
+                    </select>
+                </div>
+            </div>
+
+            <div class="filho">
+                <div class="filinho">
+                    <button onclick="verNotas()">Ver notas</button>
+                
+                </div>
+            </div>
+
+            <div class="filho">
+                <div class="filinho">
+                    <div id="saida_filme_marvel"></div>
+                </div>
+                
+                <div class="filinho">
+                    <div id="saida_filme_DC"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+
+    function verNotas() {
+        var filme_marvel = lista_filmes_marvel.value;
+
+        var marvel = 0
+        
+        var filme_DC = lista_filmes_dc.value;
+        var dc = 0
+        
+        var filme_marvel_opcao1 = "https://static.wikia.nocookie.net/universocinematograficomarvel/images/4/4c/Thor-Ultimato.jpg/revision/latest?cb=20190514112708&path-prefix=pt"
+        var filme_marvel_opcao2 = "http://br.web.img3.acsta.net/pictures/18/08/20/23/32/1683520.jpg"
+        var filme_marvel_opcao3 = "https://kanto.legiaodosherois.com.br/w760-h398-gnw-cfill-q80/wp-content/uploads/2020/06/legiao_EKohXa0I3ZHj.jpg.jpeg"
+        
+        var filme_DC_opcao1 = "https://www.showmetech.com.br/wp-content/uploads//2017/11/Regrava%C3%A7%C3%A3o-do-filme-Liga-da-Justi%C3%A7a.jpg"
+        var filme_DC_opcao2 = "https://www.opovo.com.br/_midias/jpg/2020/08/26/batman_filmes_warner_bros-13369316.jpg"
+        var filme_DC_opcao3 = "https://www.opovo.com.br/_midias/jpg/2020/08/26/batman_filmes_warner_bros-13369316.jpg"
+        
+        if (filme_marvel == 1) {
+            alert(`O filme `)
+           saida_filme_marvel.innerHTML = `<img style="display:block" src="${filme_DC_opcao1}" width="300">`    
+        }
+        if (filme_DC == 1) {
+            saida_filme_DC.innerHTML = `<img style="display:block" src="${filme_marvel_opcao1}" width="300">`
+        }
+        
+        if (filme_marvel == 2) {
+            alert()
+            saida_filme_marvel.innerHTML = `<img style="display:block" src="${filme_DC_opcao2}" width="300">`
+        }
+        if (filme_DC == 2) {
+            saida_filme_DC.innerHTML = `<img style="display:block" src="${filme_marvel_opcao2}" width="300">`
+        }
+
+        if (filme_marvel == 3) {
+            saida_filme_marvel.innerHTML = `<img style="display:block" src="${filme_DC_opcao3}" width="300">`
+        }
+        if (filme_DC == 3) {
+            saida_filme_DC.innerHTML = `<img style="display:block" src="${filme_marvel_opcao3}" width="300">`
+        }
+    }
+
+    /*
+
+2) Crie um programa em HTML/JS o qual:
+
+a) Tenha uma combobox com os melhores filmes da DC;
+b) Tenha uma outra lista com os melhores filmes da Marvel;
+c) Ao selecionar um filme da DC e outro da Marvel e clicar em "Ver notas":
+c.1) Mostre, em um alert, as notas daqueles filmes no IMDB (pode inventar, não precisa ser a nota real);
+c.2) Mostre também as opções selecionadas, ex:
+"O filme X tem uma nota de Y e o filme Z tem uma nota de K no IMDB";
+c.3) Mostre, em outro alert, em qual porcentagem o filme A é superior ao filme B;
+Obs: Mostre com 2 casas decimais;
+d) Mostre, na página, uma imagem dos dois filmes selecionados; 
+    */
+</script>

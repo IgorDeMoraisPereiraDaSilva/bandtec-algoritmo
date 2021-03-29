@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tal da combo box</title>
+</head>
+<body>
+    <select  id="id_select_lista_feira">
+        <option value="fruta_laranja">Laranja</option>
+        <option value="fruta_pitaya">Pitaya</option>
+        <option value="fruta_cambuci">Cambuci</option>
+       
+    </select>
+    <button onclick="verFruta()">Ver fruta</button>
+    <div id="saida"></div>
+</body>
+</html>
+
+<script>
+    function verFruta() {
+
+        var valor_lista = id_select_lista_feira.value
+
+        var laranja = "https://saude.abril.com.br/wp-content/uploads/2018/06/laranja-01.jpg"
+        var pitaya = "https://upload.wikimedia.org/wikipedia/commons/2/20/Webysther_20150409032418_-_Pitaya.jpg"
+        var cambuci = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Webysther_20190219235610_-_Fruta_do_cambuci_%28Campomanesia_phaea%29-_na_esquerda-direita_%C3%A9_o_fruto_maduro_e_no_centro_%C3%A9_o_fruto_verde.jpg/1200px-Webysther_20190219235610_-_Fruta_do_cambuci_%28Campomanesia_phaea%29-_na_esquerda-direita_%C3%A9_o_fruto_maduro_e_no_centro_%C3%A9_o_fruto_verde.jpg"
+
+        if (valor_lista == "fruta_laranja"){
+            saida.innerHTML = `<img width="300" src="${laranja}">`
+        }
+        if (valor_lista == "fruta_pitaya"){
+            saida.innerHTML = `<img width="300" src="${pitaya}">`
+        }
+        if (valor_lista == "fruta_cambuci"){
+            saida.innerHTML = `<img width="300" src="${cambuci}">`
+        }
+    }
+</script>

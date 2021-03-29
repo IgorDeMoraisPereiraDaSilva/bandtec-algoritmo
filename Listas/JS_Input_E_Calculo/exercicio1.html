@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+<body>
+    <header>
+        <center>
+            <h3>Exercicio 1 </h3>
+        </center>
+    </header>
+    <main>
+        Horas dormidas:<input id="input_horas_dormidas" type="number"  placeholder="Digite o tempo dormido">
+        <button onclick="calcular_horas_dormidas()">Calcular</button>
+    </main>
+    <div id=retorno></divid>
+</body>
+</html>
+
+<script>
+function calcular_horas_dormidas() {
+    let horasDormidas = Number(input_horas_dormidas.value);
+    let fases = [];
+    let saida = "";
+    fases[0] = horasDormidas * 0.05;
+    fases[1] = horasDormidas * 0.45;
+    fases[2] = horasDormidas * 0.30;
+    fases[3] = horasDormidas * 0.20;
+
+    //saida = 
+
+    return retorno.innerHTML += 
+    `   <ul> <ol>Aos dormir <u>${horasDormidas}</u> horas, você dormiu:</ol>
+            <ol> <u>${fases[0]}</u> horas na <b> fase 1   </b></ol> 
+            <ol> <u>${fases[1]}</u> horas na <b> fase 2   </b></ol>
+            <ol> <u>${fases[2]}</u> horas na <b> fase 3   </b></ol>
+            <ol> <u>${fases[3]}</u> horas na <b> fase REM </b></ol>  
+        </ul>`;
+}
+
+</script>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 7</title>
+<!-- 
+    Enunciado:
+    7. Crie um programa em HTML/JS o qual:
+    a) Pergunta o tempo que deixou o arroz cozinhando;
+    b) Ao clicar em "Provar arroz", verifica se o cozimento foi perfeito. Um cozimento perfeito é de 5 minutos, exatamente;
+    c) Caso o cozimento tenha sido perfeito, exiba a frase "Parabéns! Arroz perfeito!" e, abaixo dela, a imagem de um bonito arroz;
+    Caso contrário, exiba a frase "Arroz cru ou cozido demais!" e, abaixo dela, a imagem de um arroz "empapado" ou queimado;
+
+-->
+</head>
+<body style="text-align: center;">
+    Quanto tempo o arroz cozinhou ? <input type="text" id="id_tempo_de_cozimento" placeholder="Tempo de Cozimento"><br>
+    <button onclick="avaliar()">Provar arroz</button>
+    <br>
+    <div id="saida"></div>
+    
+</body>
+</html>
+<script>
+    function avaliar() {
+        var tempoCozinhando = Number(id_tempo_de_cozimento.value);
+        let arrozZika = "http://www.pediatradofuturo.com.br/wp-content/uploads/2017/02/arroz-680x445.jpg";
+        let arrozZoado = "https://thumbs.dreamstime.com/z/fungos-no-arroz-podre-56808866.jpg";
+        let perfeito = tempoCozinhando == 5;
+
+        if(perfeito){
+            saida.innerHTML = `Parabéns! Arroz perfeito!`;
+            saida.innerHTML = `<br><img width="300" alt="ARROZ MIL GRAU" src="${arrozZika}">`
+        }
+        else{
+            saida.innerHTML = `Arroza cru ou cozido demais`;
+            saida.innerHTML = `<br><img width="300" alt="ARROZ EMPAPADO OU QUEIMADO" src="${arrozZoado}">`         
+        }
+    }
+
+</script>
+
+

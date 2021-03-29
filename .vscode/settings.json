@@ -1,0 +1,5 @@
+{
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorWidth": 3,
+    "terminal.integrated.enableBell": true
+}

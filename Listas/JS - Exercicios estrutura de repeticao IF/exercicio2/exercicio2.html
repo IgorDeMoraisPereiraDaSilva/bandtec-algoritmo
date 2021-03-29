@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+<body style="text-align: center;">
+    <label for="">Digite a quantidade de infrações</label>
+    <input type="text" id="id_qtd_infracoes">
+    <br>
+    <label for="">Digite o valor do Veiculo</label>
+    <input type="text" id="id_valor_veiculo">
+    <br>
+    <button onclick="calcular()">calcular seguro</button>
+    <br>
+    <div id="saida"></div>
+    <script>
+        /*
+        2. Crie um programa em JS/HTML o qual calcula o valor do seguro de um carro da seguinte forma:
+    a) Solicite a quantidade de infrações que o motorista já cometeu
+    b) Solicite o valor do carro
+    c) Ao clicar em "Calcular seguro", calcule exiba o valor do seguro, considerando que:
+    c.1) O valor do seguro é 1,5% do valor do carro
+    #ficadica: para calcular 1,5% de um valor, multiplique ele por 0,015.
+    c.2) Porém, se o motorista teve menos de 3 infrações, tem um desconto de 10% no valor do seguro
+    #ficadica2: para calcular 10% de desconto um valor, multiplique ele por 0,9.
+
+
+        */
+        function calcular() {
+            
+            var infracoes = Number(id_qtd_infracoes.value);
+            var valorVeiculo = Number(id_valor_veiculo.value);
+            let valorSeguro = valorVeiculo * 0.015;
+
+            if ( infracoes <= 3 )
+                valorSeguro *= 0.9
+            
+            saida.innerHTML = `O valor do seu seguro é R$${valorSeguro.toFixed(2)}`
+
+            
+        }
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

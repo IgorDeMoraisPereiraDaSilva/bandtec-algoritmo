@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+<!-- 
+    Enumciado no Script
+
+-->
+</head>
+<body style="text-align: center;">
+
+    <label for="">Qual o valor da pizza?</label>
+    <input type="text" id="id_valor_pizza">
+    <br>
+    <label for="">Estamos em quantos?</label>
+    <input type="text" id="id_qtd_amigos">
+    <br>
+    <label for="">Digite o valor que a galera quer pagar</label>
+    <input type="text" name="" id="id_valor_que_a_galera_quer_pagar">
+    <br>
+    <button onclick="rolaPizza()">Rola a pizza?</button><br>
+    <div id="saida"></div>
+
+    <script>
+        function rolaPizza() {
+            var valorPizza = Number(id_valor_pizza.value);
+            var galera = Number(id_qtd_amigos.value);
+            let valorQueQueremPagar = Number(id_valor_que_a_galera_quer_pagar.value)
+            let valorParaCada = valorPizza / galera;
+
+            saida.innerHTML = `Cada amigo vai pagar R$${valorParaCada.toFixed(2)} pela pizza`;
+
+            if (valorParaCada > valorQueQueremPagar) 
+                saida.innerHTML += `<br>Deu ruim! Pizza muito cara!`;
+            else
+                saida.innerHTML += `<br>Uhu! Vamos pedir a pizza!`;
+        }
+        
+        /*
+        Enunciado:
+        4. Refaça a questão anterior de tal forma que o valor máximo por amigo não seja fixo em 20,00,
+         mas que seja um campo informado pelo usuário na página.
+          Use esse valor para saber se vai mostrar a frase de lamento ou de compra da pizza.
+        
+        
+
+    Reference :
+        3. Refaça a questão 6 da lista "Estrutura de decisão IF" (da pizza) de tal forma que,
+         caso o valor por amigo fique em até 20,00 deve aparecer a frase "Uhu! Vamos pedir a pizza!".
+
+    6. Um grupo de amigos costuma (ou costumava, antes do Covid19) a se reunir 
+    na casa de um deles para pedir e comer pizza.
+     Só que eles tinham um trato de que o valor da pizza era deveria ser um que,
+      quando dividido entre os amigos não passe de 20,00 por amigo.
+       Ajude eles criando um programa em HTML/JS o qual:
+
+a) Pergunte o valor da pizza
+
+b) Pergunte a quantidade de amigos reunidos
+
+c) Ao clicar em "Rola a pizza?", calcule e exiba o valor que cada amigo vai pagar na pizza 
+    com uma frase na página como esta "Cada amigo vai pagar R$X pela pizza"
+
+d) Somente caso o valor por amigo passe de R$20,00, exiba também a frase 
+"Deu ruim! Pizza muito cara!"
+  
+        */
+
+    
+    </script>
+</body>
+</html>
+
+
+    
+
+

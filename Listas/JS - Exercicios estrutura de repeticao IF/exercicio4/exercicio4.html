@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+</head>
+<body>
+    <label for="">Quantas Ilatinhas voce bebe por dia</label>
+    <input type="text" id="id_qtd_latinhas_por_dia">
+    <br>
+    <button onclick="calcular()">quantos refris?</button>
+    <div id="saida"></div>
+    <script>
+        
+        function calcular() {
+            var latinhaPorDia = Number(id_qtd_latinhas_por_dia.value)
+            let latinhaPorAno = latinhaPorDia * 365
+
+            saida.innerHTML = `Voce consome ${latinhaPorAno}  por ano`;
+            
+            if ( latinhaPorAno > 500 ){
+                saida.innerHTML += ` <br>Cuidado com a diabetes!`
+                saida.innerHTML += '<img width="40" src="https://image.slidesharecdn.com/diabetes02-150528143157-lva1-app6892/95/diabetes-02-7-638.jpg?cb=1432823599">'
+            }      
+            
+            function implimirImgLatina(numero){
+                // a ideia aqui era criar uma funçao recursiva para imprimir imagens de cerejas
+                // fazer o uso das estrutura de repetição WHILE, FOR, DO WHILHE etc...
+                if (numero > 1) {
+                    numero--
+                    saida.innerHTML += '<img width="40" src="https://dbdzm869oupei.cloudfront.net/img/sticker/preview/22413.png">'
+                    return chamada(numero)
+                }
+                return saida.innerHTML += ''
+
+            }
+        }
+/*
+4. Amin Tiroso bebe com certa frequência e quer saber quanto consome de refrigerante em 1 ano. 
+Para ajudá-lo a saber essa informação, crie um programa em HTML/JS o qual:
+
+a) Pergunte quantas latinhas de refrigerante toma por dia
+b) Ao clicar num botão "Quantos refris?", calcule a quantidade de refrigerante que ele consome em 1 ano,
+ considerando que 1 ano possui 365 dias
+c) Exiba na página a quantidade de latinhas que ele consome por ano
+d) Somente caso a quantidade for a partir de 500, exiba também a frase: "Cuidado com a diabetes!"
+        
+        */
+    </script>
+</body>
+</html>

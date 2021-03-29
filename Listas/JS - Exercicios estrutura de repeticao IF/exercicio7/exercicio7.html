@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{text-align : center;}
+    </style>
+    <title>Exercicio 7</title>
+</head>
+<body>
+
+    <label for="">Quantas Itaipava voce bebe por dia</label>
+    <input type="text" id="id_qtd_latinhas_por_dia">
+    <br>
+    <button onclick="calcular()">quantos refris?</button>
+    <div id="saida"></div>
+    <script>
+        
+        function calcular() {
+            var latinhaPorDia = Number(id_qtd_latinhas_por_dia.value)
+            let latinhaPorAno = latinhaPorDia * 365
+
+            saida.innerHTML = `Voce consome ${latinhaPorAno} por ano`;
+            
+            if ( latinhaPorAno > 500 ){
+                saida.innerHTML += ` <p style="color:white; background-color:red;">Cuidado com a diabetes!</P>`
+                saida.innerHTML += '<img width="400" src="https://image.slidesharecdn.com/diabetes02-150528143157-lva1-app6892/95/diabetes-02-7-638.jpg?cb=1432823599">'
+            }
+        }
+    
+        /*
+        7. Refaça a questão 4 de tal forma que a frase do item d) apareça na cor de letra branca com fundo vermelho.
+
+
+
+
+        */
+    </script>
+</body>
+</html>

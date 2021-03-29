@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula 13</title>
+</head>
+<body>
+    <header></header>
+    <main style="text-align:center">
+        first number  : <input  id="input_primeiro_numero" placeholder="digite o primeiro numero"><br>
+        secondo number: <input  id="input_segundo_numero"  placeholder="digite o segundo numero"> <br><br>
+        <button onclick="multiplicar()">Multiplicar</button>
+        <button onclick="dividir()">dividir</button>
+        <button onclick="subtrair()">subtrair</button>
+        <button onclick="somar()">somar</button>
+        <button onclick="elevar()">calcular potencia</button>
+
+    </main>
+</body>
+</html>
+
+<script>
+    // Number() funcao nativa JS que recebe como parametro texto
+    // com representacao numererica apenas
+    // exercicio pra lembrar que o token '+' tanto soma como contatena um valor
+    
+    // Abaixo temos funcoes que pega dois numeros por id em tag e armazena em uma 
+    // variavel para cada e cria outra a mais para guarda o valor da operacao
+    // e retorna uma resposta para o user por meio de um alert(); 
+
+    function multiplicar() {
+        let primeiroNumero = Number(input_primeiro_numero.value);
+        let segundoNumero = Number(input_segundo_numero.value);
+        let operacion = primeiroNumero * segundoNumero;
+
+        alert(`a multiplicação de ${primeiroNumero} por ${segundoNumero}
+        é : ${operacion} `)
+    }
+
+    function dividir() {
+        let primeiroNumero = Number(input_primeiro_numero.value);
+        let segundoNumero = Number(input_segundo_numero.value);
+        let operacion = primeiroNumero / segundoNumero;
+
+        alert(`a divisão de ${primeiroNumero} por ${segundoNumero}
+        é : ${operacion} `)
+    }
+
+    function subtrair() {
+        let primeiroNumero = Number(input_primeiro_numero.value);
+        let segundoNumero = Number(input_segundo_numero.value);
+        let operacion = primeiroNumero - segundoNumero;
+
+        alert(`a subtração  de ${primeiroNumero} por ${segundoNumero}
+        é : ${operation} `)
+    }
+
+    function somar() {
+
+        let primeiroNumero = Number(input_primeiro_numero.value);
+        let segundoNumero = Number(input_segundo_numero.value);
+        let operacion = primeiroNumero + segundoNumero;
+
+        alert(`a soma de ${primeiroNumero} por ${segundoNumero}
+        é : ${operation} `)
+    }
+
+    function elevar() {
+        
+        let primeiroNumero = Number(input_primeiro_numero.value);
+        let segundoNumero = Number(input_segundo_numero.value);
+        let operacion = Math.pow(primeiroNumero , segundoNumero);
+
+        alert(` o numero ${primeiroNumero} elevado a ${segundoNumero}
+        é : ${operation} `)
+    }
+        
+
+</script>

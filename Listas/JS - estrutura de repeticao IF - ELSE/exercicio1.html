@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+<!-- 
+    Enunciado:
+        1. Crie um programa em HTML/JS que auxilie uma Autoescola a identificar possíveis novos alunos:
+        a) Solicite o nome e a idade de uma pessoa;
+        b) Ao clicar no botão "Avaliar aluno", se a pessoa tiver 18 anos ou mais emita a mensagem 
+        "FULANO vamos tirar a CNH?";Caso contrário emita a mensagem 
+        "FULANO, você possui X% da idade necessária para tirar a CNH, vá jogar Playstation!";
+        Obs: X deve ser comparado á 18.
+
+-->
+</head>
+<body style="text-align: center;">
+    Digite o nome:<input type="text" id="id_nome" placeholder="Nome"><br>
+
+    Digite a idade:<input type="text" id="id_idade" placeholder="Idade">
+    <br><button onclick="avaliar()">Avaliar aluno</button>
+    <div id="saida"></div>
+</body>
+</html>
+<script>
+    function avaliar() {
+        var nomeAluno = id_nome.value;
+        if(nomeAluno.length <1 ){saida.innerHTML = ''}
+        else{
+            var idadeAluno = Number(id_idade.value);
+        
+            let maior_de_idade = idadeAluno >= 18;
+
+            if(maior_de_idade){
+                saida.innerHTML = `<br>${nomeAluno}, vamos tirar a CNH?`;
+            }
+            else{
+                let parcela_idade = (idadeAluno / 18) * 100; 
+                saida.innerHTML = `<br>${nomeAluno}, você possui ${parcela_idade.toFixed(2)}% da idade necessária para tirar a CNH, vá jogar Playstation!`;
+            }
+        }
+    }
+
+</script>
+

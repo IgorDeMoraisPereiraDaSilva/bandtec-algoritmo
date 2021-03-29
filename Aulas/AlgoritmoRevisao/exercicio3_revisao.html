@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio revisao 3</title>
+</head>
+<body>
+    <ul>
+        <ol>digite a area necessaria de grama</ol>
+        <ol><Input id="id_input_area"></ol>
+        <ol><button onclick="orcamento()" >Ver Orçamento</button></ol>
+    </ul>
+    <div id="saida">
+
+    </div>
+</body>
+</html>
+
+<script>
+    
+    
+
+    function orcamento() {
+        let gramaEsmeralda = 9.7;
+        let taxaGramaEsmeralda = 150;
+        
+        let gramaBatatais = 8.7;
+        let taxaGramaBatatais = 200;
+        
+        let gramaSaoCarlos = 10.7;
+        let taxaGramaSaoCarlos = 100;
+        let areaMetro2 = Number(id_input_area.value);
+        
+        let custoGramaEsmeralda = (areaMetro2 * gramaEsmeralda) + taxaGramaEsmeralda;
+        let custoGramaBatatais = (areaMetro2 * gramaBatatais) + taxaGramaBatatais;
+        let custoGramaSaoCarlos = (areaMetro2 * gramaSaoCarlos) + taxaGramaSaoCarlos;
+
+        saida.innerHTML += `Para ${areaMetro2} M<sup>2</sup> de canos desentopido: <BR>`;
+        saida.innerHTML += `O serviço pela Grama Esmeralda sai por R$ ${custoGramaEsmeralda.toFixed(2)} <BR>`;
+        saida.innerHTML += `O serviço pela Grama Batatais sai por R$ ${custoGramaBatatais.toFixed(2)} <BR>`;
+        saida.innerHTML += `O serviço pela Grama São Carlos sai por R$ ${custoGramaSaoCarlos.toFixed(2)} <BR><BR>`;
+
+        
+    }
+
+
+
+
+</script>

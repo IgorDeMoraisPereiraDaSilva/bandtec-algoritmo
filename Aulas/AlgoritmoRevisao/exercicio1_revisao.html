@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio revisao 1</title>
+</head>
+<body>
+    <div style="text-align:center;" id="espaco_para_teste">
+        Teste Por Aqui
+
+        <span> Digite a metragem </span> 
+        <input id="idMetragem"><br>
+        <button onclick="calcular()">calcular</button>
+
+        <div id="saida">
+            
+        </div>
+
+    </div>
+</body>
+</html>
+<script>
+  
+
+    function calcular() {
+
+
+        let metroNicanor = 10;
+        let taxaNicanor = 50;
+        let metroRotirute = 9.8
+        let taxaRotirute = 600;
+        
+        let metragem = Number(idMetragem.value)
+        let custoNicanor = (metroNicanor * metragem) + taxaNicanor;
+        let custoRotirute = (metroRotirute * metragem) + taxaRotirute;
+
+        saida.innerHTML += `Para ${metragem} metros de canos desentopido: <BR>`;
+        saida.innerHTML += `O serviço pela Nicanor sai por R$ ${custoNicanor.toFixed(2)} <BR>`;
+        saida.innerHTML += `O serviço pela Rotirute sai por R$ ${custoRotirute.toFixed(2)} <BR>`;
+        saida.innerHTML += `A diferrença entre ela é R$ ${(diferenca()).toFixed(2)} <BR><BR>`;
+
+        function diferenca() {
+            let maior = Math.max(custoNicanor,custoRotirute);
+            let menor = Math.min(custoNicanor,custoRotirute);
+            return maior - menor;
+        }
+    }
+
+
+    // function calculaOrcamento(metro,taxa,metragem) {
+    //    return custo = (metro * metragem) + taxa;
+    // }
+
+    
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10 </title>
+</head>
+<body style="text-align: center;">
+    <label for="">Digite a renda familiar</label>
+    <input type="text" id="id_renda_familiar">
+    <br>
+    <label for="">Digite o valor da prestação</label>
+    <input type="text" id="id_valor_prestacao">
+    <br>
+    <button onclick="calcular()">Verificar financiamento</button>
+    <br>
+    <div id="saida"></div>
+    <script>
+        function calcular() {
+            var rendaFamiliar = Number(id_renda_familiar.value)
+            var prestacaoFinaciamento = Number(id_valor_prestacao.value)
+            let prestacao = (prestacaoFinaciamento / rendaFamiliar) * 100
+
+            saida.innerHTML = `A prestação corresponde a ${prestacao}% da renda familiar`;
+
+            if (prestacao > 30) {
+                saida.innerHTML += `<p style="color:red"><b>Será necessário complementar a renda familiar</b>`
+                saida.innerHTML += `<br> <img width="${prestacao}%" src="https://www.mensagens10.com.br/wp-content/uploads/2013/09/simpatia-para-ganhar-dinheiro.jpg">`    
+            }
+        }
+        /*
+10. Criar um programa em HTML/JS que auxilie um banco a identificar 
+    quem tem renda o suficiente para fazer o financiamento da casa própria.
+
+a) Solicite o valor da renda familiar
+b) Solicite o valor da prestação
+c) Ao clicar em "Verificar financiamento", exiba na página a mensagem 
+    "a prestação corresponde a xx.x% da renda familiar" 
+    (divida a prestação pela renda e multiplique por 100)
+d) Se o valor calculado acima for maior que 30%, exibir também a mensagem 
+    "Será necessário complementar a renda familiar", esta em negrito e em vermelho.
+
+
+
+*/
+    </script>
+</body>
+</html>

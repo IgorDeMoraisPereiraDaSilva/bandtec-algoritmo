@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 
+    Enunciado:
+    6. Crie um programa em HTML/JS o qual:
+    a) Solicita a temperatura do ambiente;
+    b) Ao clicar em "Verificar clima", determine se o clima está:
+    Apropriada p/ conservar alimento - Caso a temperatura for menor que 10;
+    Inapropriada p/ conservar alimento - Caso a temperatura for a partir de 10;
+    c) Em caso de temperatura apropriada, exiba a figura de um alimento em bom estado; 
+    Caso contrário, exiba a imagem de um alimento estragado.
+
+-->
+
+    <title>Exercicio 6</title>
+</head>
+<body style="text-align: center;">
+
+    <label for="">Digite a temperatura do ambiente</label>
+    <input type="text" id="id_temperatura_ambiente" placeholder="temperatura">
+    <br>
+    <button onclick="verificarClima()">Verificar clima</button><br>
+    <div id="saida"></div>
+
+    <script>
+        function verificarClima() {
+            var temperatura = Number(id_temperatura_ambiente.value)
+            let apropriado = temperatura < 10;
+            let frutaBoa = "http://jbchost.com.br/madeinjapan/imgmat/2014/01/30_laranja_da_2.jpg"
+            let frutaRuim = "http://4.bp.blogspot.com/-0-39tG_c95M/UOXDECZ27JI/AAAAAAAAAuk/eMwjOmBEftg/s1600/image.jpg"
+
+            if (apropriado)
+                saida.innerHTML = `<img width="300" src="${frutaBoa}">`;
+            else
+                saida.innerHTML = `<img width="300" src="${frutaRuim}">`;
+            
+        }
+
+    </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio revisao 4</title>
+</head>
+<body>
+    <ul>
+        <ol>Digite a medida da base do Triangulo</ol>
+        <ol><input id="id_input_base_triangulo"></ol>
+    </ul>
+    
+    <div id="saida">
+    
+    </div>
+    
+</body>
+</html>
+
+<script>
+    function calcular(){
+        var baseTriangulo = Number(id_input_base_triangulo.value)    
+        let alturaTriangulo = ( 2 * baseTriangulo ) - 1
+        let areaTriangulo = ( baseTriangulo * alturaTriangulo ) / 2
+
+        let ladoRetangulo = ( 3 * baseTriangulo ) + 1
+        let baseRetangulo = ( 2 * baseTriangulo ) + 1
+        let areaRetangulo = baseRetangulo * ladoRetangulo;
+
+        let areaVerde = areaRetangulo - areaTriangulo;
+
+        saida.innerHTML = `A área verde é de ${areaVerde}m2, pois o triangulo tem área de ${areaTriangulo}m2 e o retângulo tem área de ${areaRetangulo}m2`
+
+    }
+
+    /*
+     Construa um programa para calcular a área verde da imagem abaixo sabendo que:
+
+    a) A base do triângulo será um valor informado (input);
+
+    b) A altura do triângulo é duas vezes a base - 1;
+
+    c) Um dos lados do retângulo é três vezes a base do triângulo + 1;
+
+    d) O outro lado do retângulo é duas vezes a altura do triângulo + 1;
+    
+    */
+</script>

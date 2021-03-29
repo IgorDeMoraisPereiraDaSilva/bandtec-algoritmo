@@ -1,0 +1,15 @@
+.div_extremas{
+  height: 200px;
+  background-color: #75AADB;
+}
+
+.div_2{
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img{
+  height: 140px;
+}

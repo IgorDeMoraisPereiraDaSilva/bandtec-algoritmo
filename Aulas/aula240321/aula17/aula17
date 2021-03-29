@@ -1,0 +1,22 @@
+function desafio1(){
+
+Faça um programa em HTML/JS o qual:
+
+a)O usuario digita uma frase;
+b)Ao clicar em "Registrar frase":
+    b.1)armazena o valor em algum lugar
+c)Ao clicar em "Ver frase":
+    c.1)A pagina emite um alert com a frase
+previamente digitada em a)
+
+
+Obs: Devem utilizar ao menos 2 funções;
+
+Obs²: A função que exibe a frase 
+    previamente digitada não deve ser a 
+        mesma que "salva" a frase; 
+
+Obs³: Na segunda função (a que mostrará a frase)
+ não deve haver id_do_elemento.value; 
+
+}

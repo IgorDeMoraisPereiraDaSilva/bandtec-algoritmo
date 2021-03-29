@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{text-align: center;}
+    </style>
+    <title>Exercicio 8</title>
+</head>
+<body>
+    <label for="">Qual o valor da pizza?</label>
+    <input type="text" id="id_valor_pizza">
+    <br>
+    <label for="">Estamos em quantos?</label>
+    <input type="text" id="id_qtd_amigos">
+    <br>
+    <button onclick="rolaPizza()">Rola a pizza?</button><br>
+    <div id="saida"></div>
+<script>
+    function rolaPizza(){var valorPizza = Number(id_valor_pizza.value);
+        var galera = Number(id_qtd_amigos.value);
+        let valorParaCada = valorPizza / galera;
+
+        saida.innerHTML = `Cada amigo vai pagar R$${valorParaCada.toFixed(2)} pela pizza`;
+
+        if (valorParaCada > 20) {
+            saida.innerHTML += `<br><p style="color:blue;"><i><b>Deu ruim! Pizza muito cara!</b></i></p>`;
+            saida.innerHTML += `<br><img width="500" src="https://d3ugyf2ht6aenh.cloudfront.net/stores/001/011/610/products/img_9501-editar1-b970ac727df27e33cf15784496512234-1024-1024.jpg">`
+        } 
+    }       
+    /*
+    8. Refaça a questão 6 de tal forma que a frase do item d) 
+    apareça na cor de letra azul e em itálico e negrito.
+   */
+</script>
+</body>
+</html>

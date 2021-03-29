@@ -1,0 +1,20 @@
+
+.tetoChao{
+    height: 200px;
+    background-color: rgb(0, 177, 29);
+
+}
+
+.meio{
+    background-color: rgba(rgba(224, 221, 8, 0.089), green, blue, alpha);
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+img{
+    height: 140px;
+}
+

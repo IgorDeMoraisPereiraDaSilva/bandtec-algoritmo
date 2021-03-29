@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {text-align: center;}
+    </style>
+    <title>Exercicio 9</title>
+</head>
+<body>
+
+    <label for="">Digite o gasto em KWh por mes</label>
+    <input type="text" id="id_gasto_mensal">
+    <br>
+    <button onclick="alcular()">alcular conta de luz</button>
+    <div id="saida"></div>
+    
+    <script>
+        function alcular() {
+            var gastoLuz = Number(id_gasto_mensal.value);
+            let custoMensal = 0.85 * gastoLuz;
+
+            if (custoMensal < 100) 
+                custoMensal *= 0.9
+            
+            alert(`O valor da conta é R$${custoMensal.toFixed(2)}`)
+            saida.innerHTML += `<br> <img width="600" src="Screenshot-from-2021-03-19_03-16-46.png">`
+        }
+        /*
+9. Na cidade Paulopolis a luz custa R$ 0,85 por kWh. Criar um programa em HTML/JS que:
+a) Solicite a quantidade de kWh consumida no mês
+b) Ao clicar em "alcular conta de luz", calcule o valor da conta no mês
+c) Dê um desconto de 10% somente se a quantidade for menor que 100 kWh
+d) Exiba um alerta com o valor da conta a ser paga
+
+OBS. Faça o diagrama de atividades para este exercício.
+
+
+
+
+        */
+    </script>
+</body>
+</html>

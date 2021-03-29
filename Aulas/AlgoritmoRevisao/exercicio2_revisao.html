@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        .containe_principal{
+            display: flex;
+        }
+
+        .item{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .item input{
+            padding-left: 2px;
+        }
+    </style>
+
+    <title>Exercicio revisao 2</title>
+</head>
+<body>
+    <div class="container_principal">
+        
+        <div class="container_principal item">
+            
+            <label>Digite a quantidade de lampadas Necessarias:</label>
+            <input id="id_input_qtd_lampadas" placeholder="Lampadas Ex:4">
+        
+        </div>
+        
+        <div class="container_principal item">
+            
+            <label>digite o valor medio de sua conta de luz:</label>
+            <input id="id_input_media_conta_luz" placeholder="Valor em R$??">
+        
+        </div>
+        
+        <div class="container_principal item">
+        
+            <button onclick="calcular()">Calcular a economia</button>
+        
+        </div>
+        
+    </div>
+
+    <div id="saida" class="minhaDivSaida"></div>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        
+    var x = Number(id_input_qtd_lampadas.value), z =  Number(id_input_media_conta_luz.value);
+    let y = x / y
+    
+    saida.innerHTML = `O seu investimento com lâmpadas sera de R$${x.toFixed(2)}`;
+    saida.innerHTML = `A sua economia na conta de luz será de R$${z.toFixed(2)}`;
+    saida.innerHTML = `Portanto, em ${Math.floor(y)} meses o seu investimento será retornado.`;
+    }
+
+    /*
+       c)    Tenha um botão "Calcular a Economia" que mostre as seguintes mensagens na tela:
+
+        a.    O seu investimento em lâmpadas será de R$ XX,XX
+
+        b.    A sua economia na conta de luz será de R$ ZZ,ZZ
+
+        c.     Portanto, em YY meses o seu investimento será retornado.
+
+     Onde yy é o resultado da divisão de XX,XX por ZZ,ZZ
+
+    
+    */
+
+</script>

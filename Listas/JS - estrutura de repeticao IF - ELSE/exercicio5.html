@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+<!-- 
+    Enunciado:5.
+     Crie um programa em HTML/JS o qual:
+    a) Solicita a frequencia do aluno;
+    b) Ao clicar em "Analisar frequência", deve aparecer, abaixo dele:
+    A imagem de um turista, caso a frequência for menor que 50 OU
+    A imagem de um aluno estudioso, caso a frequência for a partir de 50.
+
+-->
+</head>
+<body style="text-align: center;">
+    Digite digite a frequencia do aluno<input type="text" id="id_frequencia_aluno" placeholder="frequencia"><br>
+    <br><button onclick="analisarFrequencia()">Analisar frequencia</button>
+    <br>
+    <div id="saida"></div>
+</body>
+</html>
+<script>
+    function analisarFrequencia() {
+        var frequenciaAluno = Number(id_frequencia_aluno.value);
+        const alunoTurista = "https://thumbs.dreamstime.com/z/estilo-de-vida-corajoso-homem-turista-conquista-as-montanhas-aluno-usando-mochila-profissional-para-subir-na-rocha-162872462.jpg";
+        const alunoEstudioso ="https://comps.canstockphoto.com.br/estudioso-homework-aluno-banco-de-imagem_csp26353866.jpg" ;
+        let frequente = frequenciaAluno >= 50;
+
+        if(frequente)
+            saida.innerHTML = `<img width="300" src="${alunoEstudioso}">`
+        else
+        saida.innerHTML = `<img width="300" src="${alunoTurista}">`
+        
+
+    }
+
+            //`${frequenciaAluno} vamos tirar a CNH?`;
+            //let parcela_idade = (idadeAluno / 18) * 100;
+</script>
+
+

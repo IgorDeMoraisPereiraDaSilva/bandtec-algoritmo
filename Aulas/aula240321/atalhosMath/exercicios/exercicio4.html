@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+
+    <style>
+        .form__pai{
+            display: flex;
+            flex-direction: column;
+            
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .form__pai .form__filho{
+            display: flex;
+            flex-flow: column;
+            padding: 5px;
+            
+        }
+        .form__pai #saida{
+            display: block;
+            margin-top: 20px;
+        }
+        .item{
+            display: flex;
+            flex-flow: column;
+        }
+        .form__pai .form__filho button{
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="form__pai">
+
+        <div class="form__filho">
+            
+            <button onclick="clicaEmMim()">Clica em Mim</button>
+
+        </div>
+        
+        <div class="form__filho">
+            <div class="item">
+                <div id="frase">Você já clicou em mim 0 vezes</div>
+            </div>
+            
+    
+        </div>
+     </div>
+</body>
+</html>
+
+<script>
+    var click = 0
+    function clicaEmMim() {
+        ++click;
+        frase.innerHTML = `Você já clicou em mim ${click} vezes`
+    }
+
+    /*
+4 (desafio). 
+Usando apenas o que foi ensinado até agora, crie um programa emHTML/JS o qual:
+
+a)Tenha um texto "Você já clicou 0 vezes";
+
+b)Abaixo do texto, um botão "Clica nimim", que:
+
+b.1)Sempre que clicar nele o número do texto em 
+a) aumenta em 1 (ex: "Você já clicou 7 vezes" - após 7 cliques).
+
+*/
+</script>

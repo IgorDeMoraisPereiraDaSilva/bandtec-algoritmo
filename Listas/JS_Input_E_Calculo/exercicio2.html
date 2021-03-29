@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio</title>
+</head>
+<body>
+    <header>
+        <center>
+            <h3>Exercicio 2</h3>
+        </center>
+    </header>
+    <main>
+        <div>
+            <ul>
+                Digite Votos de Caio:<ol><input id="votos_caio" type="text" value="" placeholder="Votos do Caio"></ol>
+                Digite Votos de Marise:<ol><input id="votos_marise" type="text" value="" placeholder="Votos da Marise"></ol>
+                Digite Votos Brancos:<ol><input id="votos_brancos" type="text" value="" placeholder="Votos do Brancos"></ol>
+                Digite Votos Nulos:<ol><input id="votos_nulos" type="text" value="" placeholder="Votos do Nulod"></ol>
+            </ul>
+            <center><Button onclick="resultadoEleicao()">Resultados</Button></center>
+        </div>
+
+        <div id="resultado_eleicao"></div>
+    </main>
+
+</body>
+</html>
+
+<script>
+
+    function resultadoEleicao() {
+        
+        var votos = {
+            public caio : Number(votos_caio.value),
+            public marise : Number(votos_marise.value),
+            public brancos : Number(votos_brancos.value),
+            public nulos : Number(votos_nulos.value),
+            public invalidos : votos.brancos + votos.nulos,
+            public total : votos.caio + votos.marise + votos.invalidos
+
+            
+        }
+
+        function caio() {
+            return (votos.caio*100)/votos.total;
+        }
+        
+        function marise() {
+            return (votos.marise*100)/votos.total;
+        }
+        function invalidos() {
+            return (votos.invalidos*100)/votos.total;          
+        }
+        return resultado_eleicao.innerHTML = ` 
+                <ul>
+                    <ol> <b>Total de votos:<u>${votos.total}</u></b></ol>
+                    <ol> <b>Caio:</b> ${caio()}% (${votos.caio}votos)</ol>
+                    <ol> <b>Marise:</b> ${marise()}% (${votos.marise}votos)</ol>
+                    <ol> <b>Invalidos:</b> ${invalidos()}% (${votos.invalidos}votos)</ol>
+                </ul>
+        `;
+
+    }
+</script>

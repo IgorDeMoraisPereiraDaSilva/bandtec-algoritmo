@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{text-align : center;}
+    </style>
+    <title>Exercicio 6</title>
+</head>
+<body>
+
+    <label for="">Qual o valor da pizza?</label>
+    <input type="text" id="id_valor_pizza">
+    <br>
+    <label for="">Estamos em quantos?</label>
+    <input type="text" id="id_qtd_amigos">
+    <br>
+    <button onclick="rolaPizza()">Rola a pizza?</button><br>
+    <div id="saida"></div>
+
+    <script>
+        function rolaPizza() {
+            var valorPizza = Number(id_valor_pizza.value);
+            var galera = Number(id_qtd_amigos.value);
+            let valorParaCada = valorPizza / galera;
+
+            saida.innerHTML = `Cada amigo vai pagar R$${valorParaCada.toFixed(2)} pela pizza`;
+
+            if (valorParaCada > 20) {
+                saida.innerHTML += `<br>Deu ruim! Pizza muito cara!`;
+                saida.innerHTML += `<br><img width="500" src="https://d3ugyf2ht6aenh.cloudfront.net/stores/001/011/610/products/img_9501-editar1-b970ac727df27e33cf15784496512234-1024-1024.jpg">`
+            }
+        }
+        
+
+
+        /*
+        
+6. Um grupo de amigos costuma (ou costumava, antes do Covid19) a se reunir 
+    na casa de um deles para pedir e comer pizza.
+     Só que eles tinham um trato de que o valor da pizza era deveria ser um que,
+      quando dividido entre os amigos não passe de 20,00 por amigo.
+       Ajude eles criando um programa em HTML/JS o qual:
+
+a) Pergunte o valor da pizza
+
+b) Pergunte a quantidade de amigos reunidos
+
+c) Ao clicar em "Rola a pizza?", calcule e exiba o valor que cada amigo vai pagar na pizza 
+    com uma frase na página como esta "Cada amigo vai pagar R$X pela pizza"
+
+d) Somente caso o valor por amigo passe de R$20,00, exiba também a frase 
+"Deu ruim! Pizza muito cara!"
+  
+        */
+    </script>
+</body>
+</html>

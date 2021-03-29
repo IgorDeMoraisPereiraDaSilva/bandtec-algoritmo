@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3</title>
+</head>
+<body style="text-align: center;">
+    <label for="">Digite a quantidade de filhos</label>
+    <input type="text" id="id_qtd_filhos">
+    <br>
+    <button onclick="verificar()">Verificar situação</button>
+    <br>
+    <div id="saida"></div>
+    <script>
+        function verificar() {  
+            if (Number(id_qtd_filhos.value) <= 0){ 
+                saida.innerHTML =  "Sem descendentes"
+                saida.innerHTML += '<br><img width="200" src="https://cdn.pixabay.com/photo/2018/02/16/18/51/wolf-3158282_960_720.jpg">'
+            }
+            if(Number(id_qtd_filhos.value) == 1){
+                saida.innerHTML =  "Filho único"
+                saida.innerHTML += '<br><img width="400" src="https://s2.glbimg.com/kVPBIr2pV0nnIxCr7iW1OanzYOM=/620x480/e.glbimg.com/og/ed/f/original/2020/04/02/pai_e_filho_em_abraco.jpg">'
+            }
+            if(Number(id_qtd_filhos.value) >= 2){
+                saida.innerHTML =  "Crescei e multiplicai-vos!"
+                saida.innerHTML += '<br><img width="900" src="https://www.einerd.com.br/wp-content/uploads/2019/08/a-grande-fam%C3%ADlia-je-890x437.jpg">'
+            }
+        }
+
+        /*
+3. Crie um programa em JS/HTML o qual:
+a) Pergunte ao usuário quantos filhos ele tem
+b) Ao clicar em "Verificar situação"....
+c) Caso ele não tenha filhos, exiba na própria página a frase "Sem descendentes"
+d) Caso ele tenha 1 filho, exiba na própria página a frase "Filho único"
+e) Caso ele tenha 2 ou mais filhos, exiba na própria página "Crescei e multiplicai-vos!"
+*/
+    </script>
+</body>
+</html>
