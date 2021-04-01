@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+
+    <style>
+        .form__pai{
+            display: flex;
+            flex-direction: column;
+            
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .form__pai .form__filho{
+            display: flex;
+            flex-flow: column;
+            
+        }
+        .form__pai #saida{
+            display: block;
+            margin-top: 20px;
+        }
+        .item{
+            display: flex;
+            flex-flow: column;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="form__pai">
+        <div id="form__pai form__filho">
+            <div class="item">
+                <span>Digite a quantidade de paes consumidos por dia</span><input id="in_qtd_paes" maxlength="6" placeholder="Paes consumidos por dia">
+                <span>Digite quantos pacotes de bolachas são consumidos por dia</span><input id="in_packts_bolacha" maxlength="6" placeholder="Pacotes de bolacha">
+                <span>Digite a quantidade de copos de achocolatados consumidos por dia</span><input id="in_copos_nescau" maxlength="6" placeholder="Copos de achocolatado">
+            
+            </div>
+
+        </div>
+
+        <div class="form__filho">
+
+            <button onclick="verificarCalorias()">Varificar calorias</button>
+        </div>
+        
+        <div>
+            <div id="saida"></div>
+    
+        </div>
+     </div>
+</body>
+</html>
+
+<script>
+    function verificarCalorias() {
+        var paes,bolacha,nescaus,calorias;
+
+        paes = Number(in_qtd_paes.value) * 50;
+        
+        bolacha = Number(in_packts_bolacha.value) * 80;
+
+        nescaus = Number(in_copos_nescau.value) * 70;
+        
+        calorias = paes + bolacha + nescaus
+        
+
+        if(calorias < 200 ){
+            saida.innerHTML = `<span>Parabéns,vai sair em forma da quarentena</span><br>
+                <img width="200" src="https://i.pinimg.com/originals/e7/e6/a4/e7e6a43c25b729cf65da7363055ff7c6.jpg">`
+        }
+        else if (calorias <= 400) {
+          saida.innerHTML = `<span>Cuidado,vai ficar mais fofinho(a) após a quarentena.</span><br>
+                <img width="400" src="https://www.rosaliapadovani.com.br/wp-content/uploads/2017/11/excesso-de-peso-gordura-1017-1400x800.jpg">`
+        }
+        else{
+            saida.innerHTML = `<span>Bom, acho que muitos não vão te reconhecer depois da quanrentena.</span><br>
+                <img width="800" src="https://www.papodegordo.com.br/wp-content/uploads/gordonocomputador_thumbnail.jpg">`
+        }
+        
+        
+    }
+
+/*
+    adivinha o enunciado igão
+*/
+</script>

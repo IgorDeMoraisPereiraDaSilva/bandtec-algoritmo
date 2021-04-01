@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3</title>
+
+    <style>
+        .form__pai{
+            display: flex;
+            flex-direction: column;
+            
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .form__pai .form__filho{
+            display: flex;
+            flex-flow: column;
+            
+        }
+        .form__pai #saida{
+            display: block;
+            margin-top: 20px;
+        }
+        .item{
+            display: flex;
+            flex-flow: column;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="form__pai">
+        <div id="form__pai form__filho">
+            <div class="item">
+                
+                <select id="times">
+                    <option value="1">Corinthians</option>
+                    <option value="2">Alviverde</option>
+                    <option value="3">Santos</option>
+                    <option value="4">São Paulo</option>
+                </select>
+            
+            </div>
+
+        </div>
+
+        <div class="form__filho">
+
+            <button onclick="sobre_time()">Falar sobre o time</button>
+        </div>
+        
+        <div>
+            <div id="saida"></div>
+    
+        </div>
+     </div>
+</body>
+</html>
+
+<script>
+    function sobre_time() {
+       var time = Number(times.value)
+        
+
+        if(time == 1 ){
+            saida.innerHTML = `<span style="background-color: black; color:white">Salve o Corinthians</span>`
+        }
+        else if (time == 2) {
+          saida.innerHTML = `<span style="background-color:green; color:white">Salve o alviverde imponente</span>`
+        }
+        else if(time == 3){
+            saida.innerHTML = `<span>Agora que dpa a bola é o santos</span>`
+        }
+        else if (time == 4) {
+            saida.innerHTML = `<span style="background-color:black; color:red">Salve o Tricolor paulista</span>`
+        }
+        
+        
+    }
+
+/*
+    adivinha o enunciado igão
+*/
+</script>

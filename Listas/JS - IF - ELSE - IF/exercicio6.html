@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 6</title>
+
+    <style>
+        .form__pai{
+            display: flex;
+            flex-direction: column;
+            
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .form__pai .form__filho{
+            display: flex;
+            flex-flow: column;
+            
+        }
+        .form__pai #saida{
+            display: block;
+            margin-top: 20px;
+        }
+        .item{
+            display: flex;
+            flex-flow: column;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="form__pai">
+        <div id="form__pai form__filho">
+            <span>Escolha um mes:</span>
+            <select id="meses_do_ano" onchange="verEstacao()">
+                <option value="0">----</option>
+                <option value="1">Janeiro</option>
+                <option value="2">Fevereiro</option>
+                <option value="3">Março</option>
+                <option value="4">Abril</option>
+                <option value="5">Maio</option>
+                <option value="6">Junho</option>
+                <option value="7">Julho</option>
+                <option value="8">Agosto</option>
+                <option value="9">Setembro</option>
+                <option value="10">Outubro</option>
+                <option value="11">Novembro</option>
+                <option value="12">Dezembro</option>
+            </select>            
+        </div>
+        
+        <div>
+            <div id="saida"></div>
+    
+        </div>
+     </div>
+</body>
+</html>
+
+<script>
+    function verEstacao() {
+        var mes = Number(meses_do_ano.value)
+        
+        if (mes == 0) {
+            saida.innerHTML = `Mes invalido`
+        } else if(mes <= 2) {
+            saida.innerHTML = `<img width="400" src="https://www.webintravel.com/wp-content/uploads/2016/06/winterF.jpg"> `
+        }else if (mes <= 5) {
+            saida.innerHTML = `<img width="400" src="https://ceres.noticias.rs/wp-content/uploads/sites/7/2019/09/1535482050-UmaFlex-Capa-Primavera.jpg">`
+        } else if(mes <= 8) {
+            saida.innerHTML = `<img width="400" src="https://prodoctor.net/blog/wp-content/uploads/2018/11/horario-de-ver%C3%A3o-1280x720.jpg">`
+        }else if (mes <= 11) {
+            saida.innerHTML = `<img width="400" src="https://www.estudokids.com.br/wp-content/uploads/2015/04/outono-passagem-do-verao-para-o-inverno-1200x675.jpg">`
+        }else if (mes == 12) {
+            saida.innerHTML = `<img width="400" src="https://www.webintravel.com/wp-content/uploads/2016/06/winterF.jpg"> `
+        }
+        
+        
+    }
+
+/*
+    adivinha o enunciado igão
+*/
+</script>
