@@ -36,13 +36,14 @@
     <div class="form__pai">
         <div id="form__pai form__filho">
             <div class="item">
-                <button onclick="verMedia()">Nota 1</button> 
-                <button onclick="verMedia()">Nota 2</button> 
-                <button onclick="verMedia()">Nota 3</button> 
-                <button onclick="verMedia()">Nota 4</button> 
-                <button onclick="verMedia()">Nota 5</button> 
-               
-            
+                <button onclick="nota1(1)">Nota 1</button> 
+                <button onclick="nota1(2)">Nota 2</button> 
+                <button onclick="nota1(3)">Nota 3</button> 
+                <button onclick="nota1(4)">Nota 4</button> 
+                <button onclick="nota1(5)">Nota 5</button> 
+            </div>
+            <div class="item">
+                <button onclick="reset()">reset</button>
             </div>
 
         </div>
@@ -69,11 +70,10 @@
 
     var nota=0
 
-    function verMedia() {
-        ++nota
-        
-        avaliacao.innerHTML = `Sua avaliação: ${nota}`
-        
+    function atualizarNota() {
+
+        avaliacao.innerHTML = `Sua avaliação: ${nota}`;
+
         if(nota < 2 ){
             saida.innerHTML = `<img width="300" src="${pessoaChorando}">`
         }else if(nota <= 3){
@@ -83,9 +83,36 @@
         }else{
             saida.innerHTML = `<img width="300" src="${pessoaRadiante}">`
         }
-        
-        
     }
+
+    function nota1(valor) {
+        nota+=valor
+        atualizarNota()
+    }
+
+    function reset() {
+        nota = 0
+        avaliacao.innerHTML = `Sua avaliação: ${nota}`;
+        saida.innerHTML = ''
+    }
+    
+    /* that's not clever, but garbage
+    function nota2() {
+        nota +=2 
+        atualizarNota()
+    }
+    function nota3() {
+        nota += 3
+        atualizarNota()
+    }
+    function nota4() {
+        nota += 4
+        atualizarNota()
+    }
+    function nota5() {
+        nota += 5
+        atualizarNota()
+    }*/
 
 /*
 8 (desafio). Crie um pequeno sistema de avaliação de atendimento em HTML/JS o qual:
