@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 6</title>
+</head>
+<body>
+    <label for="id_temperatura_ambiente">Digite a temperatura ambiente</label>
+    <input type="text" name="" id="id_temperatura_ambiente">
+    <br>
+    <button onclick="medir_comforto()">Medir comforto</button>
+    <br>
+    <div id="saida">
+        
+    </div>
+</body>
+</html>
+
+<script>
+    function medir_comforto() {
+        var temperatura = Number(id_temperatura_ambiente.value)
+        
+        let confortavel = temperatura >= 22 && temperatura <= 23
+        
+        if (confortavel) {
+            alert("Temperatura confortável")
+        }else{
+            alert("Temperatura NÃO confortável");
+        }
+    }
+</script>

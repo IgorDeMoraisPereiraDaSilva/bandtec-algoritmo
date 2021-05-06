@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+<body>
+    <select id="in_cafe">
+        <option value="0">Ovos</option>
+        <option value="1">Leite de arroz</option>
+        <option value="2">Bacon</option>
+    </select>
+
+    <select id="in_almoco">
+        <option value="0">Bife</option>
+        <option value="1">Hamburguer de soja</option>
+        <option value="2">frango grelhado</option>
+    </select>
+    
+    <select id="in_janta">
+        <option value="1">Picanha de soja</option>
+        <option value="0">Cupim</option>
+        <option value="2">Coração</option>
+        
+    </select>
+    
+    <button onclick="imVegan()">Sou vegano</button>
+    <br>
+    <div id="saida">
+
+    </div>
+</body>
+</html>
+<script>
+
+    function imVegan() {
+        var cafe = Number(in_cafe.value)
+        var almoco = Number(in_almoco.value)
+        var janta = Number(in_janta.value)
+        
+        let vegano = (cafe == almoco) == janta
+        
+        if (vegano) {
+            alert("Sim,você é vegano");
+        }else{
+            alert("Não,você não é vegano")
+        }
+
+    }
+
+</script>

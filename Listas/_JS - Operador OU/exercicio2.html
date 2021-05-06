@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+<body>
+    <select name="" id="forma_pagamento">
+        <option value="0">Dinheiro</option>
+        <option value="1">Cartão de débito</option>
+        <option value="2">Cartão de crédito</option>
+        <option value="3">Boleto</option>
+    </select>
+    <br>
+    <button onclick="analisarCompra()">Analisa compra</button>
+</body>
+</html>
+
+<script>
+
+    function analisarCompra() {
+
+        var formaPagamento = Number(forma_pagamento.value)
+        let aVista = formaPagamento == 0 || formaPagamento == 1;
+        let parcelado = formaPagamento == 2 || formaPagamento == 3;
+
+        if (aVista) {
+            alert("Voce tera que pagar a vista")
+        }
+
+        if (parcelado) {
+            alert("Voce poderá pagar parcelado")
+        }
+
+    }
+</script>

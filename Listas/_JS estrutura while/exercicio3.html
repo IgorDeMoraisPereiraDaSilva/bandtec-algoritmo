@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 3</title>
+</head>
+<body>
+    <input id="in_frase" placeholder="digite uma frase"><br>
+    <input id="in_repetir" placeholder="repetir n"><br>
+    <button onclick="filosofar()">Filosofar</button>
+    <br><span id="saida"></span>
+</body>
+</html>
+<script>
+    function filosofar() {
+        taOK() == "" ? alert('quantidade ou frase invalida ') : repetir_frase()
+    }
+
+    function taOK() {
+        if ( ( in_repetir.value == "" || Number(in_repetir.value) <= 0 ) || in_frase.value == '') {
+            return false
+        }else{
+            return true
+        }
+    }
+
+    function repetir_frase() {
+        let i= Number(in_repetir.value)
+        let j = 1
+        while (j++ <= i) {
+            saida.innerHTML += `${in_frase.value}<br>`
+        }
+    }
+</script>

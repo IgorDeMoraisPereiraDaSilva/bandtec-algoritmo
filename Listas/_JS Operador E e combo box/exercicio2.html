@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+<body>
+    <select id="in_times">
+        <option value="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brasao_do_Sao_Paulo_Futebol_Clube.svg/770px-Brasao_do_Sao_Paulo_Futebol_Clube.svg.png">São paulo</option>
+        <option value="https://static-wp-tor15-prd.torcedores.com/wp-content/uploads/2016/09/8.jpg">Corinthians</option>
+        <option value="http://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Santos_logo.svg/1045px-Santos_logo.svg.png">Santos</option>
+        <option value="https://i.pinimg.com/originals/b5/c3/1e/b5c31e3cd59dc782c1ea6d2a07242052.jpg">Palmeiras</option>
+    </select>
+
+    <br>
+    <button onclick="ver_time()">Calcular total a pagar</button>
+    <br>
+    <img src="" id="time">
+</body>
+</html>
+<script>
+    function ver_time() {
+        time.src = in_times.value
+    }
+</script>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Igor de Morais Pereira da Silva" />
+    <title>Avaliacao continuada 2</title>
+</head>
+<body>
+   <div class="corpo">
+       <div class="conteudo">
+            
+            Digite seu nome: <input id="in_nome" placeholder="Ex: Zé Buduia"> <br>
+            
+            Digite sua idade: <input id="in_idade" placeholder="Ex: 30"><br>
+
+            Selecione uma Modalidade :
+            
+            <Select id="in_modalidade">
+                <option value="1">Correr</option>
+                <option value="2">Nadar</option>
+                <option value="3">Pedalar</option>
+            </Select> <br>
+            
+            <button onclick="start()">Praticar esporte</button>
+            <br>
+            <div id="saida"></div><br>
+            
+            <div id="imgNatacao"></div><br>
+            <div id="imgCiclismo"></div><br>
+            <div id="imgCorrida"></div>
+            
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+    
+    // definindo endereco de imagens
+    var natacao = "https://i.pinimg.com/originals/0c/78/9a/0c789a787cd40c24b1e552b32b2ab39f.gif";
+    var corrida = "https://i.giphy.com/media/3o7btVuNvi5OBGLmFO/giphy.webp";
+    var ciclismo = "https://s18628.pcdn.co/wp-content/uploads/2017/09/giphy.gif";
+
+    //Definindo variaveis globais de distancia
+    var kmCorrida = 0;
+    var kmNatacao = 0;
+    var kmCiclismo = 0;
+    var kmTotal = 0;
+    
+    //definindo a funcao principal
+    function start(){
+        //setando o nome e idade do atleta.
+        var atleta = in_nome.value;
+        var idade = Number(in_idade.value);
+
+        //dividindo a validacao em partes menores
+        let nomeValiddo = atleta.length >= 3;
+        let idadeValida = (idade >= 18) && (idade <= 80 );
+        //perdi dois ponto porque usei let aqui
+
+        //validando
+        if( nomeValiddo && idadeValida ){
+
+            //chamando uma funcao para atualizar de distancia
+            atualizaDistancia();            
+
+            
+            saida.innerHTML = `Atleta <b>${atleta}</b> - Idade <b>${idade}</b> anos <br>
+                            Km correndo: <b>${kmCorrida.toFixed(1)}</b> <b>(${( ( kmCorrida / kmTotal ) * 100 ).toFixed(2) }%)</b> <br>
+                            Km nadando: <b>${kmNatacao.toFixed(1)}</b> <b>(${( ( kmNatacao / kmTotal ) * 100 ).toFixed(2) }%)</b> <br>
+                            Km pedalando: <b>${kmCiclismo.toFixed(1)}</b> <b>(${( ( kmCiclismo / kmTotal ) * 100 ).toFixed(2) }%)</b> <br><br>
+                            Km total: <b>${kmTotal.toFixed(1)}</b> <br>`
+            
+            //Chamando a funcao responsavel por atualizar as imagens
+            atualizaImagens();
+
+        }else{
+            
+            //informando a invalidade dos dados inseridos
+            alert("Dados Inválidos!")
+        
+        }
+
+    }
+
+
+    function atualizaImagens() {// funcao responsavel por atualizar as imagenn
+
+        imgNatacao.innerHTML = `<img src="${natacao}" width="${ 300 * ( kmNatacao / kmTotal )}" style="float:left;">`;
+        imgCiclismo.innerHTML = `<img src="${ciclismo}" width="${ 300 * ( kmCiclismo / kmTotal )}" style="float:left;">`;
+        imgCorrida.innerHTML = `<img src="${corrida}" width="${ 300 * ( kmCorrida / kmTotal )}" style="float:left;">`;
+    
+    }
+
+    function atualizaDistancia() {// funcao que valida a distancia conforme a modalidade
+        
+        if(Number(in_modalidade.value) == 1){
+                kmCorrida += 1.5
+            }else if (Number(in_modalidade.value) == 2) {
+                kmNatacao += 1.5
+            }else {
+                kmCiclismo += 1.5
+            }
+
+            kmTotal = (kmCorrida + kmNatacao + kmCiclismo)
+    }
+
+    
+</script>

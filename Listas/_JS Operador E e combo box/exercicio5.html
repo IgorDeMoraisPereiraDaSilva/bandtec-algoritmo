@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+</head>
+<body>
+    <label for="id_renda">Digite sua renda</label>
+    <input type="text" name="" id="id_renda">
+    <br>
+    <label for="id_renda_familia">Digite seu peso</label>
+    <input type="text" name="" id="id_renda_familia">
+    <br>
+    <button onclick="vai_ter_auxilio()">Verificar ajuda</button>
+    <br>
+    <div id="saida">
+        
+    </div>
+</body>
+</html>
+
+<script>
+    function vai_ter_auxilio() {
+        var renda_familia = Number(id_renda_familia.value)
+        var renda = Number(id_renda.value)
+        
+        let elegivel = renda < 1051 && renda_familia <= 2100
+        
+        if (elegivel) {
+            alert("Você tem direio")
+        }else{
+            alert("Você NÃO tem direito");
+        }
+    }
+</script>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .form__pai{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .form__pai .form__filho{
+            display: flex;
+            flex-flow: column;
+            
+        }
+        .form__pai #saida{
+            display: block;
+            margin-top: 20px;
+        }
+        .item{
+            display: flex;
+            flex-flow: column;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="form__pai">
+        <div id="form__pai form__filho">
+            <div class="item">
+                
+                <span>Digite o valor do carro a vista</span><input type="text" id="in_carro_a_vista" maxlength="7" placeholder="Carro a vista">
+                <span>Digite a taxa de juros a.m.</span><input type="text" id="in_taxa_am" maxlength="3" placeholder="Taxa a.m.">
+                <span>Digite a quantidade de parcelas</span><input type="text" id="in_qtd_parcela" maxlength="3" placeholder="Quantidade de parcelas">
+            
+            </div>
+
+        </div>
+
+        <div class="form__filho">
+
+            <button onclick="calculaPreju()">Calcular prejú</button>
+        </div>
+        
+        <div>
+
+            <div id="saida"></div>
+    
+        </div>
+     </div>
+</body>
+</html>
+
+<script>
+    function calculaPreju() {
+        var A,B,C,primeiroTermo,razao;//Defining variables
+        
+        //requesting values from a couple of inputs
+        var valor_do_carro = Number(in_carro_a_vista.value)
+        var qtd_parcela = Number(in_qtd_parcela.value)
+        primeiroTermo = (valor_do_carro/ qtd_parcela)
+        
+        var taxa = Number(in_taxa_am.value)
+        
+        razao = (taxa / 100) +1
+        
+        //setting values
+        
+       
+        B = valor_do_carro* 0.8;
+        A  = (primeiroTermo * ((razao**qtd_parcela) -1))/ (razao -1)  
+        C = A / valor_do_carro;
+        
+        
+
+        // primeiro_termo *=  (razao **(posica_n_essimo_termo - 1) )
+
+        saida.innerHTML = `Seu carro vai sair por um total de <b>R$${A.toFixed(2)}
+            </>.Após 1 mês,ele vai valer <b>R$${B.toFixed(2)}</b>.<br> Porque comprou financiado,
+            vai pagar o correspondente a <b>${C.toFixed(2)}</> carros.`
+    }
+
+/*
+
+8 (desafio).Crie um programa emHTML/JS que simuleuma determinada situação na 
+compra de um carro financiado.
+....No Brasil, devido ao "status" que carro dá e à falta de educação financeira do 
+brasileiro médio, é comum 2 erros financeiros gritantes na compra de carros:
+Comprar um carro 0km e comprar via financiamento,parcelando em muitas vezes,como em 24x
+ ou 36x por exemplo. Assim, seu programa vai mostrar ao usuário, de maneira gráfica, o 
+ quão ruim é comprar um carro 0km e financiado:
+ a)Solicite o valor do carro a vista;
+ b)Solicite a taxa de juros a.m. (ao mês);
+ c)Solicite a quantidade de parcelas;
+ d)Ao clicar em "Calcular prejú":
+ d.1)Exiba uma frase como esta: 
+    
+    Seu carro vai sair por um total de R$A. Após 1 mês,ele já vai valer só R$B.
+    Porque comprou financiado, vai pagar o correspondentea C carros;
+    Obs:
+    
+    A- O total pago após o final do financiamento. 
+    #Ficadica:
+    A taxa de juros é simplesmente a razão de uma PG 
+    (se a taxa for 5, arazão é 1.05 , se a taxa for 3, a razão é 1.03, se 
+    a taxa for 6,5, a razão é 1.065) e o primeiro termo da PG num financiamento é
+    sempre o valor do bem dividido pelaquantidade de parcelas. 
+    Exiba este valor com 2 casas decimais;
+
+    B- O valor do carro a vista menos 20%.
+    #Ficadica:Para "tirar" 20% de um valor,basta obter 80% dele. 
+    Exiba este valor com 2 casasdecimais;
+
+C- A quantidade de "carros" que comprou financiado,se comparado com o valora vista.
+Ex:A vista seria 40.000, mas financiado ficou em 80.000.
+Nesse caso, C tem quedar 2.
+Ex2: A vista seria 50.000, mas financiado ficou em 140.000. Nesse caso,C tem que dar2.8.
+
+#ficadica: para calcular este valor, basta fazera soma dos termos de uma PG finita 
+(veja aqui) Exiba este valor com 1 casa decimal.
+
+*/
+
+</script>

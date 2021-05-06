@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 7</title>
+
+    <style>
+        
+        .form__pai{
+            display: flex;
+            
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .form__pai .form__filho{
+            display: flex;
+            flex-flow: column;
+            
+        }
+        .form__pai #saida{
+            display: block;
+            margin-top: 20px;
+        }
+        .item{
+            display: flex;
+            flex-direction: column;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="form__pai">
+        <div>
+            <div class="form__pai form__filho">
+                <div class="item">
+                    
+                    <span>Digite o primeiro termo da PG:</span><input type="text" id="in_primeiro_termo" maxlength="6" placeholder="primero termo">
+                    <span>Digite a razão da PG:</span><input type="text" id="in_razao" maxlength="5" placeholder="Razão da PG">
+                    <span>Digite a posição que deseja ver da PG:</span><input type="text" id="in_n_essimo_termo">
+
+                </div>
+            </div>
+    
+            <div class="form__filho">
+    
+                <button onclick="calculaPG()">Calcular PG</button>
+            </div>
+            
+            <div>
+    
+                <div id="saida"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function calculaPG() {
+
+        var primeiro_termo = Number(in_primeiro_termo.value)
+        var razao = Number(in_razao.value)
+        var posica_n_essimo_termo = Number(in_n_essimo_termo.value)
+
+        primeiro_termo *=  (razao **(posica_n_essimo_termo - 1) )
+
+        saida.innerHTML = `O ${posica_n_essimo_termo}º termo nessa PG será ${primeiro_termo}`
+    }
+
+/*
+
+7.Crie um programa emHTML/JS que calcule a progressão geométrica, fazendo o seguinte:
+a)Solicite o 1º número da progressão;
+b)Solicite a razão;
+c)Solicite qual o número (termo) da progressão desejaver;
+d)Ao clicar em "Calcular PG":
+d.1)Calcule o termo conforme indicado em c) e exiba,abaixo a frase: 
+"O Xº termo nessa PG será Y";Obs:Xé o número indicado em
+c)e Y é o valor que o programa calculou;
+#ficadica:Calculadora de PG online e fórmula.
+
+    
+*/
+</script>

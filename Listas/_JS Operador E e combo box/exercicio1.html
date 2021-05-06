@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+<body>
+    <select id="in_bebida">
+        <option value="0">Nada</option>
+        <option value="7">Água</option>
+        <option value="12">Refrigerante</option>
+        <option value="20">Cerveja</option>
+    </select>
+
+    <select id="in_refeicao">
+        <option value="8">Salada</option>
+        <option value="36">Feijoada</option>
+        <option value="27">Bife a Cavalo</option>
+        <option value="32">Peixa Frito</option>
+    </select>
+    <br>
+    <label for="nome">Diga seu nome:</label>
+    <input type="text" id="in_nome">
+    <br>
+    <button onclick="calcular_conta()">Calcular total a pagar</button>
+    <br>
+    <div id="saida">
+
+    </div>
+</body>
+</html>
+<script>
+    function calcular_conta() {
+        var bebida = Number(in_bebida.value)
+        var refeicao = Number(in_refeicao.value)
+        var nome = in_nome.value;
+        var total_conta = bebida + refeicao
+
+        saida.innerHTML = `Ola,${nome}. Seu almoço vai custar um total de R$${total_conta}`
+
+    }
+</script>

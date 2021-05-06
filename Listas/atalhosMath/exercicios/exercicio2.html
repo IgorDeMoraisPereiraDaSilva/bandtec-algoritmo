@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+
+    <style>
+        .form__pai{
+            display: flex;
+            flex-direction: column;
+            
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .form__pai .form__filho{
+            display: flex;
+            flex-flow: column;
+            
+        }
+        .form__pai #saida{
+            display: block;
+            margin-top: 20px;
+        }
+        .item{
+            display: flex;
+            flex-flow: column;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="form__pai">
+        <div id="form__pai form__filho">
+            <div class="item">
+                
+                <span>Digite o raio da circunferência</span><input type="text" id="in_raio" maxlength="5" placeholder="raio em cm">
+            
+            </div>
+
+        </div>
+
+        <div class="form__filho">
+
+            <button onclick="calculaArea()">Calcular Área</button>
+        </div>
+        
+        <div>
+
+            <div id="saida"></div>
+    
+        </div>
+     </div>
+</body>
+</html>
+
+<script>
+    function calculaArea() {
+        const pi = 3.14;
+        var raio = Number(in_raio.value)
+        
+        //famoso piraio cagado
+        var area = pi * ( raio ** 2 )
+
+        saida.innerHTML = `Dada a circunferencia de raio: ${raio.toFixed(2)}cm temos <br>
+        uma àrea:${area.toFixed(2)}cm<sup>2<sup> `
+    }
+
+    /*
+
+2.Crie um programa emHTML/JS o qual:
+a)Solicite o raio de uma circunferência;
+b)Ao clicar num botão "Calcular Área":
+b.1)Calcule e exiba a área da circunferência na tela,abaixo do botão
+ (considere oPI como sendo3,14).
+Brasil escola:
+Área da circunferência
+Considere uma circunferência de raio r. 
+Para calcular sua área, devemos multiplicar o quadrado do valor do raio por π.
+
+    
+*/
+</script>

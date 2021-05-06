@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio aula 18</title>
+</head>
+<body>
+    <center>
+        <button onclick="incrementar()">incrementar</button>
+        <div style="margin-top: 4px;" id="num_placeholder"></div>
+    </center>
+</body>
+</html>
+
+<script>
+    var numero = ""
+    function incrementar(){
+        num_placeholder.innerHTML = `${++numero}`;
+        if(numero == 13){
+            alert("O usuário não gostará do próximo número")
+        }  
+        
+    }
+</script>

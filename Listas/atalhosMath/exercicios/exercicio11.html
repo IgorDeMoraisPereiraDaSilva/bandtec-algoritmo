@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10</title>
+
+    <style>
+        
+        .form__pai{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .form__pai .form__filho{
+            display: flex;
+            flex-flow: column;
+            
+        }
+        .form__pai #saida{
+            display: block;
+            margin-top: 20px;
+        }
+        .item{
+            display: flex;
+            flex-flow: column;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="form__pai">
+        <div id="form__pai form__filho">
+            <div class="item">
+                
+                <span>Valor guardado no cofrinho: R$<span id="poupanca">0.00</span></span>
+                <span>Valor a ser depositado:</span><input type="text" id="in_valor_deposito" maxlength="6" placeholder="Deposite aqui">
+                <span>Quantidade de depositos: <b id="qtd_depositos">0</b></span>
+                <span>Quantidade de saques: <b id="qtd_saques">0</b></span>
+            </div>
+
+        </div>
+
+        <div class="form__filho">
+
+            <button onclick="depositar()">Depositar</button>
+            <button onclick="esvaziarCofre()">Esvaziar cofre</button>
+        </div>
+     </div>
+</body>
+</html>
+
+<script>
+    //defining my set of variables
+    var cofre = 0 ,saques = 0, depositos = 0;
+
+
+    function depositar() {
+        let valor_deposito = Number(in_valor_deposito.value)
+    
+        cofre += valor_deposito
+    
+        qtd_depositos.innerHTML = ++depositos
+        poupanca.innerHTML = cofre.toFixed(2)
+    
+    }
+
+    function esvaziarCofre() {
+        cofre = 0
+        qtd_saques.innerHTML = ++saques
+    
+        poupanca.innerHTML = cofre.toFixed(2)
+    }
+   
+
+/*
+
+11. Crie um programa em HTML/JS que simule um cofrinho da seguinte forma:
+a) Tenha, logo de cara, a frase "Valor guardado no cofrinho: R$0.00";
+b) Solicite o valor a se depositado;
+c) Ao clicar num botão "Depositar":
+c.1) O valor informado em b) é adicionado ao valor exibido na frase descrita em a);
+d) Ao clicar num botão "Tirar toda a grana": 
+d.1) O valor exibido em a) volta a 0.00.
+
+    
+*/
+</script>

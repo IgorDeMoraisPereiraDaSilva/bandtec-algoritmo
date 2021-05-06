@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista atalhos matematicos exercicio 14 remake</title>
+</head>
+<body>
+
+   <div id="btn_play">
+        <button onclick="start_game()">START GAME</button>
+    </div>
+    
+    <div id="tela" style="display:none">
+        <div id="ringue">
+
+            <div style="width: 49%; float: left;">
+                <img onclick="hit_player_one()" src="https://i.pinimg.com/originals/61/c1/ef/61c1ef36121036fd7b04e415aeb71ea9.gif" height="300">
+                <div style="background-color: rgb(13, 136, 44); width: 100%; height:10px;"  id="life_player_one"></div>
+            </div>
+        
+            <div style="width: 50%; float: right;">
+                <img onclick="hit_player_two()" src="https://i.pinimg.com/originals/dc/e5/cc/dce5cc9d848855349a307e5832d75869.gif" height="300">
+                
+                <div style="background-color: rgb(13, 136, 44); width: 100%; height: 10px;" id="life_player_two"></div>
+            </div>
+        </div>
+
+        <div>
+            <div style="text-align: center;">
+                <span>Golpes sofridos pelo player 1: <b id="id_hits_player_one">0</b></span>
+                <span>Golpes sofridos pelo player 2: <b id="id_hits_player_two">0</b></span>
+            </div>
+        </div>
+    </div>
+
+    
+
+</body>
+</html>
+
+<script>
+    
+    var hitPlayerOne = 0 , life_p1 = 100
+
+    function hit_player_one() {
+        id_hits_player_one.innerHTML = ++hitPlayerOne
+        life_p1 -= 5
+        if (life_p1 <= 30) {
+            life_player_one.style.backgroundColor = "red"
+        } else if (life_p1 <= 60) {
+            life_player_one.style.backgroundColor = "yellow"
+        }
+        life_player_one.style.width = `${life_p1}%`
+    }
+
+    var hitPlayerTwo = 0, life_p2 = 100,marge=100;
+
+    function hit_player_two() {
+        id_hits_player_two.innerHTML = ++hitPlayerTwo
+        life_p2 -= 5
+        marge+=5
+
+        if (life_p2 <= 30) {
+            life_player_two.style.backgroundColor = "red"
+        } else if (life_p2 <= 60) {
+            life_player_two.style.backgroundColor = "yellow"
+        }
+        life_player_two.style.marginleft = `${marge}px`
+        life_player_two.style.width = `${life_p2}%`
+    }
+
+    function start_game() {
+        console.log("parece que o style não ta mudando")
+        document.querySelector('#btn_play').style.diplay = "none";
+        document.querySelector('#tela').style.diplay = "block";
+       
+    }
+    
+</script>

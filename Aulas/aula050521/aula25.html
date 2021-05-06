@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula 25</title>
+</head>
+<body>
+    Digite a frase aqui<input id="in_frase"><br>
+    <button onclick="repetir_frase()">Repetir frase </button>
+</body>
+</html>
+<script>
+    
+    function repetir_frase() {
+        let i = 1
+        let x = Number(in_frase.value)
+        let texto = document.createElement('div')
+        document.getElementsByTagName('body')[0].appendChild(texto)
+        
+        if (x >= 2) {
+            while ( i <= x ){
+                texto.innerHTML += `oh shit here we go again <br>`
+                i++
+            }
+        }else{
+            texto.innerHTML += `oh shit here we go again <br>`
+        }
+        
+    }
+
+</script>

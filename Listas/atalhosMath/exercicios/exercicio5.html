@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+
+    <style>
+        
+        .form__pai{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .form__pai .form__filho{
+            display: flex;
+            flex-flow: column;
+            
+        }
+        .form__pai #saida{
+            display: block;
+            margin-top: 20px;
+        }
+        .item{
+            display: flex;
+            flex-flow: column;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="form__pai">
+        <div id="form__pai form__filho">
+            <div class="item">
+                
+                <span>Digite um numero para base</span><input type="text" id="in_base" maxlength="6" placeholder="Base">
+                <span>Digite um numero para potencia</span><input type="text" id="in_expoente" maxlength="5" placeholder="Potencia">
+            
+            </div>
+
+        </div>
+
+        <div class="form__filho">
+
+            <button onclick="calculaPotencia()">Fazer Potencia</button>
+        </div>
+        
+        <div>
+
+            <div id="saida"></div>
+    
+        </div>
+     </div>
+</body>
+</html>
+
+<script>
+    function calculaPotencia() {
+        var base = Number(in_base.value)
+        var expoente = Number(in_expoente.value)
+        var potencia = base ** expoente
+        
+
+        saida.innerHTML = `${base}<sup>${expoente}</sup> = ${potencia.toFixed(1)} `
+    }
+
+    /*
+
+5.Crie um programa emHTML/JS o qual:
+a)Solicite um número;
+b)Solicite outro número;
+c)Ao clicar em "Fazer potência":
+c.1)Exibe, abaixo, um texto como este:
+ "A elevadoa B dá X";
+Obs:A é o número informado em a)e B é o número informado em b).
+
+    
+*/
+</script>
