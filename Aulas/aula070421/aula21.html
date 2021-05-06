@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 21</title>
+    <style>
+        body{
+            background-color: blueviolet;
+        }
+        .content{
+            position: relative;
+            background: white;
+            height: 30vh;
+            width: 60%;
+            margin: 0 auto;
+            padding: 20px;
+            resize: both;
+            overflow: auto;
+        }
+        .inner{
+            background: rgb(90, 106, 45);
+            color: white;
+            width: 200px;
+            height: 100px;
+            margin: -70px 0 0 -120px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section class="content">
+        <div class="inner">
+           <span> Informe a nota do aluno:</span><input id="in_nota">
+            <span>Informe a frequencia do aluno:</span><input id="in_frequencia">
+            <button onclick="verificar_situacao()"> Verificar situação</button>
+        </div>
+    </section>
+</body>
+</html>
+<script>
+    function verificar_situacao() {
+        var nota = Number(in_nota.value);
+        var frequencia  = Number(in_frequencia.value)
+        let reprovado = (nota < 6) || (frequencia < 70)
+
+        if(reprovado){
+            alert("Reprovado")
+        }else{
+            alert("Aprovado")
+        }
+     }
+</script>

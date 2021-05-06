@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificar aluno</title>
+
+    <style>
+        .form__pai{
+            display: flex;
+            flex-direction: column;
+            
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .form__pai .form__filho{
+            display: flex;
+            flex-flow: column;
+            
+        }
+        .form__pai #saida{
+            display: block;
+            margin-top: 20px;
+        }
+        .item{
+            display: flex;
+            flex-flow: column;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="form__pai">
+        <div id="form__pai form__filho">
+            <div class="item">
+                
+                <span>Digite a nota de um aluno</span><input id="in_nota_aluno" maxlength="6" placeholder="nota Aluno">
+            
+            </div>
+
+        </div>
+
+        <div class="form__filho">
+
+            <button onclick="classificarAluno(in_nota_aluno.value)">Classificar vagabundo</button>
+        </div>
+        
+        <div>
+
+            <div id="saida"></div>
+    
+        </div>
+     </div>
+</body>
+</html>
+
+<script>
+    function classificarAluno(notaAluno) {
+       // var notaAluno = Number(in_nota_aluno.value)
+        notaAluno = Number(notaAluno.value)
+
+        if(notaAluno < 0 ){
+            alert("valor invalido (inferior a 0)")
+        }else if (notaAluno < 5) {
+          alert("Aluno precisa de muita ajuda")
+        }else if(notaAluno <= 7){
+            return alert("Aluno na media")
+        }else if (notaAluno <= 9.5) {
+            alert("aluno acima da media")    
+        }else if(notaAluno <= 10){
+            alert("aluno fora da curva")
+        }else if(notaAluno > 10){
+            alert("valor invalido (superior a 10)")
+        }
+        
+    }
+
+/*
+    adivinha o enunciado igão
+*/
+</script>

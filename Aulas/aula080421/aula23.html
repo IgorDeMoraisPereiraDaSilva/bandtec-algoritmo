@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 23</title>
+</head>
+<body>
+    Frase<input  id="in_frases">
+    <br>
+    primeira letra:<span id="primeira_letra"></span><br>Ultima letra:<span id="ultima_letra"></span>
+    <br><span id="validator"></span>
+    <button onclick="enviar()">Enviar formulario</button>
+</body>
+</html>
+
+<script>
+
+    function enviar() {
+        var frase = in_frases.value
+        primeira_letra.innerHTML = frase[0]
+        ultima_letra.innerHTML = frase[frase.length - 1]
+
+        temArroba(frase)
+
+    }
+
+    function temArroba(verbo) {
+        if ( verbo.indexOf("@") < 0 || verbo.indexOf(".") < 0) 
+            validator.innerHTML = ` <b style="color : red"> Email invalido </b>`
+        else
+            validato.innerHTML = " "
+        
+    }
+</script>
