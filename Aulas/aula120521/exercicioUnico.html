@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" countent="IE=edge">
+    <meta name="viewport" countent="width=device-width, initial-scale=1.0">
+    <title>Exercicio unico</title>
+    <!--
+        1) Crie um programa em HTML/JS que:
+
+a) Tenha um input;
+b) Tenha um botão "Adicionar fruta", que:
+a.1) Adiciona frutas á uma lista (que aparece na tela, separe-as por <br>);
+c) Tenha um botão "Ver nota fiscal" que: 
+c.1) Esconde a lista de frutas e mostra o valor total da lista (2,50 cada item);
+c.2) Mostra a quantidade de itens na lista (não os itens);
+c.3) Mostra a primeira fruta adiciona na lista;
+c.4) Mostra a última fruta adicionada na lista; 
+    -->
+</head>
+<body>
+    <input id="in_fruta" placeholder="Fruta:Ex:Tomate">
+    <br>
+    <button onclick="addfuta()">Adicionar fruta</button>
+    <br>
+    <button onclick="verNota()">Ver Nota fiscal</button>
+    <br>
+    <span id="lista"></span>
+    <br>
+    <span id="nota"></span>
+</body>
+</html>
+<script>
+    var count = 0;
+    var primeiraFruta = ''
+    var ultimaFruta = ''
+    function addfuta() {
+        lista.style.display = 'block'
+        nota.style.display = 'none'
+
+        lista.innerHTML += `${in_fruta.value} <br>`;
+        
+        if (count == 0) {   
+            primeiraFruta = in_fruta.value;
+        }
+
+        ultimaFruta = in_fruta.value;
+        in_fruta.value = '';
+
+        count++
+    }
+
+    function verNota() {
+        nota.style.display = 'block'
+        lista.style.display = 'none'
+        
+        nota.innerHTML = 
+        `
+        <b>Valor total: ${(count*2.5).toFixed(2)}</b><br>
+        <b>Quantidade de items: ${count}</b><br>
+        <b>Primeira fruta: ${primeiraFruta}</b><br>
+        <b>Ultima Fruta: ${ultimaFruta}</b><br>
+        `
+    }
+</script>
